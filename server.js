@@ -3,5 +3,5 @@ const app = express();
 const port= process.env.PORT || 8080;
 app.use(express.static("frontend"));
 app.listen(port, function(){
-    console.log("server running on https://localhost:"+port);
+    console.log("server running on http://localhost:"+port);
 });
