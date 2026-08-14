@@ -4,12 +4,12 @@ var users=[
     {
         "name":"john doe",
         "gender":"male",
-        "image":"john.png"
+        "image":"john image.png"
     },
     {
         "name":"jane doe",
         "gender":"female",
-        "image":"",
+        "image":"jane image.jpeg",
     }
 ]
 
@@ -20,10 +20,32 @@ function toggleUser(){
 
     var userName= document.getElementById("user-name");
     var userGender=document.getElementById("user-gender");
-    var userImage=document.getElementById("user-Image");
+    var userImage=document.getElementById("user-image");
 
     userName.innerHTML = users[curId].name;
     userGender.innerHTML = users[curId].gender;
-    userImage.src=user[curId].image;
+    userImage.src=users[curId].image;
 
+}
+function randomUser() {
+    fetch("https://randomuser.me/api")
+    .then(function(res) {
+      return res.json();
+    })
+    .then(function(data) {
+      var userName = document.getElementById("user-name");
+      var userGender = document.getElementById("user-gender");
+      var userImage = document.getElementById("user-image");
+
+      var newUserName = data.results[0].name.first + " " + data.results[0].name.last;
+      var newUserGender = data.results[0].gender;
+      var newUserImage = data.results[0].picture.large;
+      userName.innerHTML = newUserName;
+      userGender.innerHTML = newUserGender;
+      userImage.src = newUserImage;
+
+    })
+    .catch(function(err) {
+      console.log("Error occured : " + err);
+    })
 }

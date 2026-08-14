@@ -1,5 +1,6 @@
-h1 {
-    color : red
+body{
+    background-color: plum;
+    margin: 0;
 }
 
 .card{
@@ -13,6 +14,7 @@ h1 {
     margin-top: 100px;
     margin-left: auto;
     margin-right: auto;
+    background-color: aqua;
 }
 .card img{
     width:100%;
@@ -26,9 +28,29 @@ h1 {
 }
 
 .card button:hover{
-    color:aqua;
+    color:burlywood;
     cursor:pointer;
 
 }
 
+.navbar{
+    border: 2px solid black;
+    text-align: center;
+    padding: 15px;
+    background-color:aqua;
+}
 
+.navbar a{
+    padding:15px;
+    text-decoration:none;
+    color:rgb(14, 14, 14);
+    background-color:aqua;
+    
+
+}
+
+.navbar a:hover{
+    color:rgb(179, 94, 106);
+    text-decoration:underline;
+    
+}
